@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.question{
+  &__content{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &__input{
+    position: relative;
+  }
+  &__title{
+    margin-top: 40px;
+    max-width: 650px;
+    text-align: center;
+  }
+  &__explanation{
+    margin-top: 17px;
+    color: #5d5d5d;
+    text-align: center;
+  }
+  &__form{
+    margin-top: 40px;
+    & input{
+      position: relative;
+      border: 1px solid #c9c9c9;
+      background: transparent;
+      padding: 13px;
+      border-radius: 10px;
+      font-size: 16px;
+      width: 300px;
+      &:focus{
+        outline: 2px solid rgba(255, 70, 0, 0.94);
+        & + .placeholder{
+          color: rgba(255, 70, 0, 0.94);
+          transform: translate(0, -130%);
+          background-color: white;
+          font-size: 0.9rem;
+        }
+      }
+
+      &:not(:placeholder-shown) + .placeholder{
+        transform: translate(0, -130%);
+        background-color: white;
+        font-size: 0.9rem;
+      }
+    }
+    & .placeholder{
+      font-size: 1rem;
+      position: absolute;
+      top: 13px;
+      left: 13px;
+      padding: 0 5px;
+      color: #a9a9a9;
+      pointer-events: none;
+      transform: translate(0);
+      transition: transform 0.2s ease-out, font-size 0.2s ease-out, background-color 0.2s ease-out, color 0.2s ease-out;
+    }
+  }
+  &__error{
+    color: #e70000;
+    justify-self: flex-start;
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}
+
+.post{
+  &__title{
+    margin-top: 25px;
+  }
+  &__information{
+    margin-top: 10px;
+    display: flex;
+    font-size: 13px;
+    color: #79828B;
+  }
+  &__item{
+    &:not(:first-of-type):before{
+      content: "\2022";
+      margin: 0 5px;
+    }
+  }
+  &__text{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: justify;
+  }
+
+}
+
+.text{
+  &__item{
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 821px) {
+  .container{
+    max-width: 821px;
+    padding: 0 16px;
+  }
+}
+
+@media screen and (max-width: 776px) {
+  .container{
+    max-width: 776px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .container{
+    max-width: 576px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .container{
+    max-width: 520px;
+    padding: 0 32px;
+  }
+  .question__form input{
+    width: 200px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .container{
+    max-width: 320px;
+  }
+}
